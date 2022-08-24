@@ -27,11 +27,13 @@
 <div class="row">
     <div class="col-2 pt-3 g-0">
         <ul class="nav nav-pills flex-column">
-            <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+<!--            <th:block sec:authorize="hasRole('ROLE_ADMIN')">-->
+            <div th:if="${user.getRolesName().contains('ADMIN')}">
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" th:href="@{/admin}">Admin</a>
             </li>
-            </th:block>
+            </div>
+<!--            </th:block>-->
             <li class="nav-item">
                 <a class="nav-link active" th:href="@{/user}">User</a>
             </li>
